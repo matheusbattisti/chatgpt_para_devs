@@ -54,3 +54,47 @@ ORDER BY total_spent DESC;
 Transforme essa query para o banco PostgreSQL:
 
 Transforme essa query para o banco MongoDB, que é NoSQL:
+
+# 6 - SQL para ORM
+
+<!--
+
+SELECT
+  DATE_TRUNC('month', sales.date) AS month,
+  products.category AS category,
+  SUM(sales.quantity) AS quantity_sold,
+  SUM(sales.price * sales.quantity) AS total_revenue,
+  SUM((sales.price - sales.cost) * sales.quantity) AS total_profit,
+  SUM((sales.price - sales.cost) * sales.quantity) / SUM(sales.price * sales.quantity) AS profit_margin
+FROM
+  sales
+  JOIN products ON sales.product_id = products.id
+GROUP BY
+  month,
+  category
+ORDER BY
+  month ASC,
+  category ASC
+
+   -->
+
+Reescreva essa query com Sequelize:
+
+<!--
+
+User.findAll({
+  attributes: ['id', 'name', [sequelize.fn('COUNT', 'posts.id'), 'postCount']],
+  include: [{
+    model: Post,
+    attributes: [],
+  }],
+  group: ['user.id'],
+  having: {
+    postCount: { [Op.gt]: 5 },
+  },
+  order: [[sequelize.col('postCount'), 'DESC'], ['name', 'ASC']],
+});
+
+ -->
+
+Reescreva este código em uma query de SQL:

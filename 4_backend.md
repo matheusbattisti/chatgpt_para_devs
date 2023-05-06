@@ -16,6 +16,8 @@ Preciso deste mesmo código de API só que em Python, utilizando o framework Fla
 
 Gere dados de teste para produtos, e uma rota em Express JS para exibir um produto individual
 
+Crie um JSON com dados de pessoas, pelo menos: nome, data de nascimento, profissao e hobbies
+
 # 5 - Prevenção de falhas de segurança
 
 <!--
@@ -170,3 +172,59 @@ Preciso criar um sistema de Quiz, quais tecnologias você sugere? Quero uma stac
 Gostaria de criar uma loja virtual do zero, utilizando PHP e MySQL, quais tecnologias você sugere? Preciso de gateway de pagamento e também de hospedagem
 
 Seria melhor criar já com um framework próprio para ecommerce? tem alguma sugestão?
+
+# 10 - Refatorando código
+
+<!--
+
+function getUniqueNumbers(numbers) {
+  const uniqueNumbers = [];
+  for (let i = 0; i < numbers.length; i++) {
+    const currentNumber = numbers[i];
+    let isUnique = true;
+    for (let j = 0; j < uniqueNumbers.length; j++) {
+      const uniqueNumber = uniqueNumbers[j];
+      if (currentNumber === uniqueNumber) {
+        isUnique = false;
+        break;
+      }
+    }
+    if (isUnique) {
+      uniqueNumbers.push(currentNumber);
+    }
+  }
+  return uniqueNumbers;
+}
+
+-->
+
+Refatore este código, adicione comentários, e explique a refatoração:
+
+# 11 - Teste unitário
+
+<!--
+function validarEmail(email) {
+  // Expressão regular para validar um email
+  const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+  // Testa o email fornecido com a expressão regular
+  return regex.test(email);
+}
+ -->
+
+Crie funções de teste unitário para esta função:
+
+<!--
+
+function multiplicar(a, b) {
+  return a * b;
+}
+ -->
+
+Crie testes unitários para esta função:
+
+# 12 - Criando regex
+
+Crie uma regex para verificar uma URL é válida, e explique
+
+Crie uma regex para extrair e-mail de um texto, e explique
